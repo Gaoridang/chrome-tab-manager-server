@@ -15,8 +15,7 @@ app.post("/api/crawl", async (req, res) => {
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "networkidle2" });
 
-  const selector =
-    "#root > div.sc-bBHHxi.sc-cNKqjZ.ljidQ > div.sc-brSvTw.hRJeFN > div > div";
+  const selector = ".atom-one";
   const textContent = await page.$$eval(
     selector + " p, " + selector + " pre",
     (elements) => {
