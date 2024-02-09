@@ -7,6 +7,10 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("tab manager server running");
+});
+
 app.post("/api/crawl", async (req, res) => {
   const { url } = req.body;
   const browser = await puppeteer.launch({
@@ -26,10 +30,6 @@ app.post("/api/crawl", async (req, res) => {
   await browser.close();
 
   res.send({ textContent });
-});
-
-app.get("/", (req, res) => {
-  res.send("tab manager server running");
 });
 
 app.listen(port, () => {
