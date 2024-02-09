@@ -28,6 +28,10 @@ app.post("/api/crawl", async (req, res) => {
   res.send({ textContent });
 });
 
+app.get("/", (req, res) => {
+  res.send("tab manager server running");
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
