@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("tab manager server running");
+  res.status(200).send("tab manager server running");
 });
 
 app.post("/api/crawl", async (req, res) => {
