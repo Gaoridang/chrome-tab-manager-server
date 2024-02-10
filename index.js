@@ -2,7 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const puppeteer = require("puppeteer");
 const app = express();
-const port = 80;
+const port = 8080;
 
 app.use(cors());
 app.use(express.json());
